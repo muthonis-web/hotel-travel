@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York City Travel Booking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #0038A8;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .dock-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dock-item {
+            width: 200px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dock-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dock-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0038A8, #FFFFFF, #EE352E);
+        }
+        
+        .dock-image {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            border: 3px solid #f5f5f5;
+        }
+        
+        .dock-item:hover .dock-image {
+            transform: scale(1.05);
+            border-color: #EE352E;
+        }
+        
+        .dock-title {
+            font-weight: bold;
+            color: #0038A8;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .dock-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+        
+        .book-button {
+            background-color: #0038A8;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .book-button:hover {
+            background-color: #EE352E;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #EE352E;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Experience New York City</h1>
+        <p>Book your unforgettable NYC adventure today</p>
+    </div>
+    
+    <div class="dock-container">
+        <!-- Manhattan -->
+        <div class="dock-item">
+            <div class="tag">Popular</div>
+            <img src="img/manhatam.avif" alt="Manhattan" class="dock-image">
+            <div class="dock-title">Manhattan</div>
+            <div class="dock-description">The heart of NYC with skyscrapers, Broadway, and Central Park</div>
+            <a href="https://www.booking.com/city/us/new-york.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Brooklyn -->
+        <div class="dock-item">
+            <img src="img/brooklyn.avif" alt="Brooklyn" class="dock-image">
+            <div class="dock-title">Brooklyn</div>
+            <div class="dock-description">Trendy neighborhoods, great food, and the Brooklyn Bridge</div>
+            <a href="https://www.booking.com/district/us/brooklyn.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Times Square -->
+        <div class="dock-item">
+            <div class="tag">Iconic</div>
+            <img src="img/timessquare.avif" alt="Times Square" class="dock-image">
+            <div class="dock-title">Times Square</div>
+            <div class="dock-description">The crossroads of the world with bright lights and Broadway</div>
+            <a href="https://www.booking.com/landmark/us/times-square.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Statue of Liberty -->
+        <div class="dock-item">
+            <div class="tag">Must-See</div>
+            <img src="img/statue.avif" alt="Statue of Liberty" class="dock-image">
+            <div class="dock-title">Statue of Liberty</div>
+            <div class="dock-description">Iconic symbol of freedom in New York Harbor</div>
+            <a href="https://www.booking.com/landmark/us/statue-of-liberty.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Central Park -->
+        <div class="dock-item">
+            <img src="img/centralpark.avif" alt="Central Park" class="dock-image">
+            <div class="dock-title">Central Park</div>
+            <div class="dock-description">843 acres of green space in the middle of Manhattan</div>
+            <a href="https://www.booking.com/landmark/us/central-park.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Queens -->
+        <div class="dock-item">
+            <img src="img/queens.avif" alt="Queens" class="dock-image">
+            <div class="dock-title">Queens</div>
+            <div class="dock-description">Diverse culture, great food, and two major airports</div>
+            <a href="https://www.booking.com/district/us/queens.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 New York City Travel Experiences | All booking links powered by Booking.com</p>
+    </div>
+</body>
+</html>

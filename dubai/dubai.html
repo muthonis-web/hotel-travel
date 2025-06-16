@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Travel Booking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #00704A;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .dock-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dock-item {
+            width: 200px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dock-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dock-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00704A, #FFB81C, #000000);
+        }
+        
+        .dock-image {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            border: 3px solid #f5f5f5;
+        }
+        
+        .dock-item:hover .dock-image {
+            transform: scale(1.05);
+            border-color: #FFB81C;
+        }
+        
+        .dock-title {
+            font-weight: bold;
+            color: #00704A;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .dock-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+        
+        .book-button {
+            background-color: #00704A;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .book-button:hover {
+            background-color: #FFB81C;
+            color: #000;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Discover Dubai</h1>
+        <p>Book your luxurious desert getaway today</p>
+    </div>
+    
+    <div class="dock-container">
+        <!-- Burj Khalifa -->
+        <div class="dock-item">
+            <img src="img/burj khalifa.jpg" alt="Burj Khalifa" class="dock-image">
+            <div class="dock-title">Burj Khalifa</div>
+            <div class="dock-description">World’s tallest building with breathtaking city views</div>
+            <a href="https://www.booking.com/landmark/ae/burj-khalifa.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+
+        <!-- Desert Safari -->
+        <div class="dock-item">
+            <img src="img/desertsafari.jpg" alt="Desert Safari" class="dock-image">
+            <div class="dock-title">Desert Safari</div>
+            <div class="dock-description">Thrilling dune bashing, camel rides & sunset dinners</div>
+            <a href="https://www.booking.com/tour/city/ae/dubai.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+
+        <!-- Dubai Marina -->
+        <div class="dock-item">
+            <img src="img/dubaimarina.jpg" alt="Dubai Marina" class="dock-image">
+            <div class="dock-title">Dubai Marina</div>
+            <div class="dock-description">Luxury yachts, upscale dining, and vibrant nightlife</div>
+            <a href="https://www.booking.com/landmark/ae/dubai-marina.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+
+        <!-- The Dubai Mall -->
+        <div class="dock-item">
+            <img src="img/dubaimall.jpg" alt="Dubai Mall" class="dock-image">
+            <div class="dock-title">The Dubai Mall</div>
+            <div class="dock-description">Shopping paradise with aquarium, ice rink, and more</div>
+            <a href="https://www.booking.com/landmark/ae/the-dubai-mall.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+
+        <!-- Palm Jumeirah -->
+        <div class="dock-item">
+            <img src="img/palmjumeirah.jpg" alt="Palm Jumeirah" class="dock-image">
+            <div class="dock-title">Palm Jumeirah</div>
+            <div class="dock-description">Iconic man-made island with resorts and beach clubs</div>
+            <a href="https://www.booking.com/landmark/ae/palm-jumeirah.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+
+        <!-- Dubai Creek -->
+        <div class="dock-item">
+            <img src="img/dubaicreek.jpg" alt="Dubai Creek" class="dock-image">
+            <div class="dock-title">Dubai Creek</div>
+            <div class="dock-description">Historic heart of Dubai with souks and boat rides</div>
+            <a href="https://www.booking.com/landmark/ae/dubai-creek.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Dubai Travel Experiences | All booking links powered by Booking.com</p>
+    </div>
+</body>
+</html>

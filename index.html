@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreStay - Hotel & Travel</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header,
+        nav,
+        section,
+        footer {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+
+        .banner {
+            background-image: url('grandhotel.avif');
+            background-size:50%;
+            color: white;
+            text-align:center;
+            padding: 20px 10px;
+            max-height: 500px;
+        }
+
+        #destinations,.hotels {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .destinations {
+            flex-direction: row;
+            display: flex;
+            gap: 16px;
+        }
+        .hotels{
+           flex-direction: row;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card .myimage{
+            max-width: 100%;
+        }
+        .card .myimage{
+            max-width: 100%;
+        }
+        .card .myimage{
+            max-width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .about-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+    }
+
+    .about-section h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1 1 50%;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      flex: 1 1 40%;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {}
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image, .about-text {
+        flex: 1 1 100%;
+      }
+        .contact-form-container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 500;
+            color: #1E90FF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea, select {
+            padding: 12px;
+            border: 2px solid #1E90FF;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+            color: #333;
+            width: 100%;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #4682B4;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4682B4;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #caption {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        /* Contact info styles */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-method {
+            text-align: center;
+            flex: 1 1 200px;
+        }
+
+        .social-media {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            color: white;
+            background: #004080;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image, .about-text {
+                flex: 1 1 100%;
+            }
+
+            .banner {
+                padding: 60px 20px;
+                height: 300px;
+            }
+
+            .destinations, .hotels {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                padding: 40px 10px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ExploreStay</h1>
+        <p>Your gateway to amazing stays and destinations</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#about us">About us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+     <section class="banner">
+        <img src="img/airplane.avif" alt="an image of a hotel and travel banner" class="myimage">
+        <h2>Discover Your Next Adventure</h2>
+        <p>Top hotels and travel experiences just a click away.</p>
+    </section>
+
+    <section id="destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destinations">
+            <div class="card">
+                <img src="img/romantic_streets.jpg" alt="Romantic streets in South Africa" class="myimage">
+                <h3>South Africa</h3>
+                <p>Romantic streets, gourmet food, and the Hillbrow Tower.</p>
+                <a href="../sa/sa.html" target="_blank">Explore</a>
+            </div>
+            <div class="card">
+                <img src="img/Camps-Bay-Beach-2.jpg" alt="an image of a beach in dubai" class="myimage">
+                <h3>Dubai</h3>
+                <p>Robben Island with stunning Camps Bay Beach and Table Mountain.</p>
+                <a href="../dubai/dubai.html" target="_blank">Explore</a>
+            </div>
+            <div class="card">
+                <img src="img/iconic landmarks.jpg" alt="an image of iconic landmarks in New York" class="myimage">
+                <h3>New York</h3>
+                <p>The city that never sleeps with iconic landmarks.</p>
+                <a href="../newyork/newyork.html" target="_blank">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotels">
+        <h2>Top Hotels</h2>
+        <div class="hotels">
+            <div class="card">
+                <h3>Grand Palace Hotel</h3>
+                <img src="img/grandhotel image.jpg" alt="Grand Palace Hotel" class="myimage" onclick="openModal('img/grandhotel image.jpg', 'Grand Palace Hotel')">
+                <p>Luxury hotel in the heart of South Africa.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Dubai Beach Resort</h3>
+                <img src="img/beachresort.jpg" alt="Dubai Beach Resort" class="myimage" onclick="openModal('img/beachresort.jpg', 'Dubai Beach Resort')">
+                <p>Relaxing beachfront hotel with spa and pools.</p>
+            </div>
+            
+            <div class="card">
+                <h3>NYC Central Inn</h3>
+                <img src="img/centralinn.jpg" alt="NYC Central Inn" class="myimage" onclick="openModal('img/centralinn.jpg', 'NYC Central Inn')">
+                <p>Modern comfort steps away from Times Square.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <section class="about-section" id="about">
+        <h1>About Us</h1>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Welcome to <strong>ExploreStay Hotels & Travels</strong> – your trusted companion in unforgettable getaways. Established in 2010, we specialize in crafting exceptional travel experiences and offering premium hotel stays around the globe.
+                </p>
+                <p>
+                    Whether you're seeking luxurious beachfront resorts, cozy mountain retreats, or thrilling adventure tours, we provide end-to-end solutions for all your travel needs. Our mission is to deliver comfort, convenience, and unforgettable memories.
+                </p>
+                <p>
+                    With a team of experienced travel experts and hospitality professionals, we're committed to making your journey as smooth and enjoyable as possible.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="img/about us.jpg" alt="About Us - Hotel and Travel" class="myimage">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-container" id="contact">
+        <h2>Contact Our Travel Experts</h2>
+        <form id="contactForm">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="flex: 1 1 200px;">
+                    <input type="text" id="name" name="name" placeholder="Full Name*" required>
+                </div>
+                <div style="flex: 1 1 200px;">
+                    <input type="email" id="email" name="email" placeholder="Email Address*" required>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="flex: 1 1 200px;">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                </div>
+                <div style="flex: 1 1 200px;">
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a topic*</option>
+                        <option value="booking">Hotel Booking</option>
+                        <option value="tour">Tour Package</option>
+                        <option value="custom">Custom Travel Plan</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <textarea id="message" name="message" placeholder="Your Message*" required rows="5"></textarea>
+            
+            <div style="text-align: left; margin: 10px 0;">
+                <label>
+                    <input type="checkbox" name="newsletter" checked> 
+                    Subscribe to our travel newsletter
+                </label>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <div class="contact-info">
+            <div class="contact-method">
+                <h3>Call Us</h3>
+                <p>+24721705813</p>
+                <p>24/7 Customer Support</p>
+            </div>
+            
+            <div class="contact-method">
+                <h3>Email Us</h3>
+                <p>cate67389@gmail.com</p>
+                <p>Response within 24 hours</p>
+            </div>
+            
+            <div class="contact-method">
+                <h3>Visit Us</h3>
+                <p>123 Travel Street</p>
+                <p>New York, NY 10001</p>
+            </div>
+        </div>
+        
+        <div class="social-media">
+            <h2>Connect With Us</h2>
+            <p>Follow us on social media for travel inspiration and special offers</p>
+            
+            <div class="social-icons">
+                <a href="https://facebook.com/explorestay" class="social-icon" target="_blank" aria-label="Facebook">FB</a>
+                <a href="https://twitter.com/explorestay" class="social-icon" target="_blank" aria-label="Twitter">TW</a>
+                <a href="https://instagram.com/explorestay" class="social-icon" target="_blank" aria-label="Instagram">IG</a>
+                <a href="https://youtube.com/explorestay" class="social-icon" target="_blank" aria-label="YouTube">YT</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 ExploreStay. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(imgSrc, caption) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+            
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            captionText.innerHTML = caption;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            alert('Thank you for your message! Our team will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

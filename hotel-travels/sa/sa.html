@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Africa Travel Booking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #00704A;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .dock-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dock-item {
+            width: 200px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dock-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dock-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00704A, #FFB81C, #000000);
+        }
+        
+        .dock-image {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            border: 3px solid #f5f5f5;
+        }
+        
+        .dock-item:hover .dock-image {
+            transform: scale(1.05);
+            border-color: #FFB81C;
+        }
+        
+        .dock-title {
+            font-weight: bold;
+            color: #00704A;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .dock-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+        
+        .book-button {
+            background-color: #00704A;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .book-button:hover {
+            background-color: #FFB81C;
+            color: #000;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Explore South Africa</h1>
+        <p>Book your unforgettable African adventure today</p>
+    </div>
+    
+    <div class="dock-container">
+        <!-- Cape Town -->
+        <div class="dock-item">
+            <img src="img/capetown.avif" alt="Cape Town" class="dock-image">
+            <div class="dock-title">Cape Town</div>
+            <div class="dock-description">Stunning beaches, Table Mountain, and vibrant culture</div>
+            <a href="https://www.booking.com/city/za/cape-town.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Kruger National Park -->
+        <div class="dock-item">
+            <img src="img/kruger.jpg" alt="Kruger National Park" class="dock-image">
+            <div class="dock-title">Kruger National Park</div>
+            <div class="dock-description">World-class safari experience with the Big Five</div>
+            <a href="https://www.booking.com/region/za/kruger-national-park.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Durban -->
+        <div class="dock-item">
+            <img src="img/durban.avif" alt="Durban" class="dock-image">
+            <div class="dock-title">Durban</div>
+            <div class="dock-description">Golden beaches, warm waters, and rich Zulu culture</div>
+            <a href="https://www.booking.com/city/za/durban.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Garden Route -->
+        <div class="dock-item">
+            <img src="img/gardenroute.avif" alt="Garden Route" class="dock-image">
+            <div class="dock-title">Garden Route</div>
+            <div class="dock-description">Scenic coastal drive with forests, beaches, and lagoons</div>
+            <a href="https://www.booking.com/region/za/garden-route.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Johannesburg -->
+        <div class="dock-item">
+            <img src="img/johannesburg.avif" alt="Johannesburg" class="dock-image">
+            <div class="dock-title">Johannesburg</div>
+            <div class="dock-description">Vibrant city life and important historical sites</div>
+            <a href="https://www.booking.com/city/za/johannesburg.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+        
+        <!-- Winelands -->
+        <div class="dock-item">
+            <img src="img/capewinelands.jpg" alt="Winelands" class="dock-image">
+            <div class="dock-title">Cape Winelands</div>
+            <div class="dock-description">World-renowned vineyards and stunning mountain views</div>
+            <a href="https://www.booking.com/region/za/cape-winelands.html" class="book-button" target="_blank">Book Now</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 South Africa Travel Experiences | All booking links powered by Booking.com</p>
+    </div>
+</body>
+</html>
